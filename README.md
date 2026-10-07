@@ -29,7 +29,7 @@
 Welcome to the ultimate curated directory of **conversational AI platforms**, **open-source chatbot frameworks**, and **dialog management systems**. Whether you are looking for enterprise-grade commercial solutions (such as *Microsoft Copilot Studio*, *Amazon Lex*, *Google Dialogflow*, and *Kore.ai*), or self-hostable open-source alternatives (like *Dify*, *Open WebUI*, *Flowise*, *Rasa*, and *AstrBot*), this list covers category leaders, LLM orchestration, and privacy-respecting conversational infrastructure.
 
 **Key Market Context:** 💡
-- **Dify** & **Open WebUI** lead the open-source agentic and self-hosted AI chatbot ecosystem with **150K+ GitHub stars**, providing visual LLMOps workflows and private local deployment.
+- **Dify** & **Open WebUI** lead the open-source agentic and self-hosted AI chatbot ecosystem with **150K+ GitHub_Stars**, providing visual LLMOps workflows and private local deployment.
 - **Rasa** remains the **enterprise standard for on-premises conversational AI**, offering **25M+ downloads** and fine-grained dialog control.
 - **AstrBot** provides **IM-native integration** connecting multi-agent frameworks with QQ, WeChat, Telegram, Slack, and Discord.
 
@@ -67,7 +67,7 @@ Welcome to the ultimate curated directory of **conversational AI platforms**, **
 
 ## 🔓 Open-Source GitHub Projects 🌐
 
-*Sorted by GitHub Star Count (Descending)* 🌟
+*Sorted by GitHub Stars_Count (Descending)* 🌟
 
 - **[Dify](https://github.com/langgenius/dify)** [![Stars](https://img.shields.io/github/stars/langgenius/dify?style=social&color=white)](https://github.com/langgenius/dify/stargazers)  
   **LLMOps platform with agentic workflows**, Apache-2.0 licensed. Visual workflow builder combining LLM nodes, RAG knowledge retrieval, tools, & conditional logic. Self-hosted or Dify Cloud. 🎨
@@ -110,7 +110,7 @@ Contributions are welcome! Follow these steps to submit new conversational AI pl
 
 1. 🍴 **Fork** the repository.
 2. 📝 **Add/edit** entries in `README.md` maintaining table/list structure and formatting.
-3. 🔗 Include project title, official website/GitHub link, exact star count, license, & brief description.
+3. 🔗 Include project title, official website/GitHub link, exact Stars_Count, license, & brief description.
 4. 🚀 Submit a **Pull Request** with a descriptive summary of your changes.
 
 ---
