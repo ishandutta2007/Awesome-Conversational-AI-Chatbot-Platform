@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+
+    <!-- Text Gradient -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: url(#text-grad);
+    }
+    .subtitle {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      fill: #94A3B8;
+    }
+    .badge-text {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      fill: #E2E8F0;
+    }
+
+    /* CSS Animations for Background Dynamic Elements */
+    @keyframes pulseNode {
+      0% { r: 6px; opacity: 0.4; }
+      50% { r: 10px; opacity: 0.9; }
+      100% { r: 6px; opacity: 0.4; }
+    }
+    @keyframes floatWave {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .node-1 { animation: pulseNode 3s infinite ease-in-out; }
+    .node-2 { animation: pulseNode 4s infinite ease-in-out 1s; }
+    .node-3 { animation: pulseNode 3.5s infinite ease-in-out 0.5s; }
+
+    .floating-card-1 { animation: floatWave 6s infinite ease-in-out; }
+    .floating-card-2 { animation: floatWave 7s infinite ease-in-out 1.5s; }
+
+    .connecting-line {
+      stroke: #6366F1;
+      stroke-width: 1.5;
+      stroke-dasharray: 6 6;
+      opacity: 0.35;
+      animation: dashMove 20s linear infinite;
+    }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bg-grad)" />
+
+  <!-- Animated Background Network Graph (Behind Text) -->
+  <g class="background-elements">
+    <!-- Connecting Lines -->
+    <line x1="100" y1="80" x2="250" y2="160" class="connecting-line" />
+    <line x1="250" y1="160" x2="180" y2="280" class="connecting-line" />
+    <line x1="1000" y1="90" x2="920" y2="200" class="connecting-line" />
+    <line x1="920" y1="200" x2="1080" y2="290" class="connecting-line" />
+    <line x1="920" y1="200" x2="780" y2="270" class="connecting-line" />
+
+    <!-- Animated Nodes -->
+    <circle cx="100" cy="80" r="6" fill="#38BDF8" class="node-1" filter="url(#glow)" />
+    <circle cx="250" cy="160" r="8" fill="#818CF8" class="node-2" filter="url(#glow)" />
+    <circle cx="180" cy="280" r="7" fill="#C084FC" class="node-3" filter="url(#glow)" />
+    <circle cx="1000" cy="90" r="8" fill="#38BDF8" class="node-2" filter="url(#glow)" />
+    <circle cx="920" cy="200" r="6" fill="#A855F7" class="node-1" filter="url(#glow)" />
+    <circle cx="1080" cy="290" r="7" fill="#818CF8" class="node-3" filter="url(#glow)" />
+
+    <!-- Soft Ambient Glow Orbs -->
+    <circle cx="200" cy="120" r="140" fill="#6366F1" opacity="0.12" filter="url(#glow)" />
+    <circle cx="1000" cy="240" r="160" fill="#A855F7" opacity="0.15" filter="url(#glow)" />
+
+    <!-- Subtle Chat Bubble Decorative Motifs (Low Opacity in background) -->
+    <g class="floating-card-1" opacity="0.25">
+      <rect x="80" y="190" width="140" height="45" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="218" font-family="sans-serif" font-size="12" fill="#38BDF8">🤖 Agentic AI</text>
+    </g>
+    <g class="floating-card-2" opacity="0.25">
+      <rect x="980" y="120" width="140" height="45" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="1000" y="148" font-family="sans-serif" font-size="12" fill="#C084FC">💬 LLM Dialog</text>
+    </g>
+  </g>
+
+  <!-- Foreground Content (Always Crisp & Unobstructed) -->
+  <g class="foreground-content" transform="translate(600, 150)" text-anchor="middle" filter="url(#shadow)">
+    
+    <!-- Central Icon/Badge Header -->
+    <g transform="translate(0, -65)">
+      <rect x="-70" y="-18" width="140" height="34" rx="17" fill="url(#accent-grad)" stroke="#818CF8" stroke-width="1.5" />
+      <text x="0" y="5" font-family="'Segoe UI', sans-serif" font-weight="700" font-size="13" fill="#FFFFFF" text-anchor="middle">🚀 2026 EDITION</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="5" class="title">Awesome Conversational AI &amp; Chatbot Platform</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="42" class="subtitle">Curated Directory of Commercial SaaS Platforms &amp; Open-Source Dialog Frameworks</text>
+
+    <!-- Interactive / Dynamic Feature Pill Tags -->
+    <g transform="translate(0, 85)">
+      <!-- Pill 1: LLM Agents -->
+      <g transform="translate(-240, 0)">
+        <rect x="-70" y="-16" width="140" height="32" rx="16" fill="#1E293B" stroke="#38BDF8" stroke-width="1.2" />
+        <text x="0" y="5" class="badge-text" text-anchor="middle">🧠 LLM Agents</text>
+      </g>
+
+      <!-- Pill 2: Open Source -->
+      <g transform="translate(-80, 0)">
+        <rect x="-70" y="-16" width="140" height="32" rx="16" fill="#1E293B" stroke="#818CF8" stroke-width="1.2" />
+        <text x="0" y="5" class="badge-text" text-anchor="middle">🔓 Open Source</text>
+      </g>
+
+      <!-- Pill 3: Enterprise CX -->
+      <g transform="translate(80, 0)">
+        <rect x="-70" y="-16" width="140" height="32" rx="16" fill="#1E293B" stroke="#C084FC" stroke-width="1.2" />
+        <text x="0" y="5" class="badge-text" text-anchor="middle">🏢 Enterprise CX</text>
+      </g>
+
+      <!-- Pill 4: Visual Flow -->
+      <g transform="translate(240, 0)">
+        <rect x="-70" y="-16" width="140" height="32" rx="16" fill="#1E293B" stroke="#F472B6" stroke-width="1.2" />
+        <text x="0" y="5" class="badge-text" text-anchor="middle">🎨 Visual Flow</text>
+      </g>
+    </g>
+  </g>
+</svg>
